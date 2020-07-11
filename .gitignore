@@ -23,6 +23,12 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 
+# exclude everything
+src/uploads/*
+
+# exception to the rule
+!src/uploads/.gitignore 
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
@@ -44,3 +50,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# e2e
+/e2e/*.js
+/e2e/*.map

@@ -1,16 +1,78 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {
+  BrowserModule
+} from '@angular/platform-browser';
+import {
+  NgModule
+} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {
+  HttpClientModule
+} from '@angular/common/http';
+import {
+  RouterModule,
+  Routes
+} from '@angular/router';
+import {
+  FormsModule
+} from '@angular/forms';
+
+import {
+  DatePipe
+} from '@angular/common';
+
+
+
+import {
+  VulserService
+} from './vulser.service';
+
+import {
+  AppComponent
+} from './app.component';
+import {
+  NgbModule
+} from '@ng-bootstrap/ng-bootstrap';
+import {
+  SiteComponent
+} from './site/site.component';
+import {
+  EditorComponent
+} from './editor/editor.component';
+
+const appRoutes: Routes = [{
+    path: 'site',
+    component: SiteComponent
+  },
+  {
+    path: '',
+    redirectTo: '/site/',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: SiteComponent
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SiteComponent,
+    EditorComponent
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(
+      appRoutes, {
+        useHash: false,
+        onSameUrlNavigation: 'reload'
+      }, // <-- debugging purposes only
+    ),
+    BrowserModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [VulserService, DatePipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

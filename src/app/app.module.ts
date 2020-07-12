@@ -38,10 +38,16 @@ import {
 import {
   EditorComponent
 } from './editor/editor.component';
+import { AdminComponent } from './admin/admin.component';
 
-const appRoutes: Routes = [{
+const appRoutes: Routes = [
+  {
     path: 'site',
     component: SiteComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: '',
@@ -58,7 +64,8 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     SiteComponent,
-    EditorComponent
+    EditorComponent,
+    AdminComponent
   ],
   imports: [
     RouterModule.forRoot(

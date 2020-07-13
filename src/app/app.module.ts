@@ -20,6 +20,7 @@ import {
   DatePipe
 } from '@angular/common';
 
+import { CookieService } from 'ngx-cookie-service';
 
 
 import {
@@ -79,7 +80,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [VulserService, DatePipe],
+  providers: [VulserService, CookieService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

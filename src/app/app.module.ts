@@ -40,6 +40,8 @@ import {
   EditorComponent
 } from './editor/editor.component';
 import { AdminComponent } from './admin/admin.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {
@@ -78,7 +80,8 @@ const appRoutes: Routes = [
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [VulserService, CookieService, DatePipe],
   bootstrap: [AppComponent]

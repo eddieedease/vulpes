@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {
+  VulserService
+} from '../vulser.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +15,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  public Editor = ClassicEditor;
+  // if component busy?
+  public loading = false;
 
-  ngOnInit(): void {
+  public model = {
+    editorData: '<p>Text</p>'
+  };
+
+  constructor(private VulserService : VulserService) {}
+
+  ngOnInit(): void {}
+
+
+  checkDataWysig (){
+    this.VulserService.debugLog(this.model.editorData);
   }
 
 }

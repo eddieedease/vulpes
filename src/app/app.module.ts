@@ -20,7 +20,11 @@ import {
   DatePipe
 } from '@angular/common';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import { CookieService } from 'ngx-cookie-service';
+
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 import {
@@ -81,7 +85,9 @@ const appRoutes: Routes = [
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    CKEditorModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NgxLoadingModule.forRoot({})
   ],
   providers: [VulserService, CookieService, DatePipe],
   bootstrap: [AppComponent]

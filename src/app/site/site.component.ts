@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteComponent implements OnInit {
 
-  constructor() { }
+  // if component busy?
+  public loading = false;
+
+  constructor() {
+    //this.loading = true;
+  }
 
   ngOnInit(): void {
   }

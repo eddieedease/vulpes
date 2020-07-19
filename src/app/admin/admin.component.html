@@ -4,7 +4,9 @@
 
  
 
-   <div class="container-fluid">  <br><br><br>
+   <div class="container-fluid"> 
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    <br><br><br>
      <div class="row">
        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
          <div class="sidebar-sticky">
@@ -68,7 +70,11 @@
 
          <h2>Onderdeel titel</h2>
 
+         <br><button (click)="checkDataWysig()" class="btn btn-outline-secondary">Log</button>
 
+         <br><br>
+         <!-- [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic' ] }" -->
+         <ckeditor [editor]="Editor" [(ngModel)]="model.editorData" ></ckeditor>
 
 
 

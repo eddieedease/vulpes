@@ -71,10 +71,98 @@
          <h2>Onderdeel titel</h2>
 
          <br><button (click)="checkDataWysig()" class="btn btn-outline-secondary">Log</button>
-
          <br><br>
          <!-- [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic' ] }" -->
          <ckeditor [editor]="Editor" [(ngModel)]="model.editorData" ></ckeditor>
+
+
+
+
+
+
+         <br><br>
+
+         <div class="row text-center">
+          <div class="col-md-4">
+            <div class="btn-group">
+              <div
+                class="btn btn-primary"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate">
+<!--                 (viewDateChange)="viewDateChange.next(viewDate)"
+ -->                Vorige
+              </div>
+              <div
+                class="btn btn-outline-secondary"
+                mwlCalendarToday
+                [(viewDate)]="viewDate">
+                Vandaag
+              </div>
+              <div
+                class="btn btn-primary"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate">
+                Volgende
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>PLANNER</h3>
+          </div>
+          <div class="col-md-4">
+            <div class="btn-group">
+              <div
+                class="btn btn-primary"
+                [class.active]="view === 'month'" (click)="viewCalendarKind('month')">
+                
+                Maand
+              </div>
+              <div
+                class="btn btn-primary"
+                [class.active]="view === 'week'" (click)="viewCalendarKind('week')">
+                
+                Week
+              </div>
+              <div
+                class="btn btn-primary"
+                (click)="viewCalendarKind('day')"
+                [class.active]="view === 'day'">
+                Dag
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div [ngSwitch]="view">
+          <mwl-calendar-month-view
+            *ngSwitchCase="'month'"
+            [viewDate]="viewDate"
+            [events]="events"
+            [locale]="locale"
+            [activeDayIsOpen]="true"
+          >
+          </mwl-calendar-month-view>
+          <mwl-calendar-week-view
+            *ngSwitchCase="'week'"
+            [viewDate]="viewDate"
+            [locale]="locale"
+            [events]="events"
+          >
+          </mwl-calendar-week-view>
+          <mwl-calendar-day-view
+            *ngSwitchCase="'day'"
+            [viewDate]="viewDate"
+            [locale]="locale"
+            [events]="events"
+          >
+          </mwl-calendar-day-view>
+        </div>
+
+
+        <br><br>
 
 
 

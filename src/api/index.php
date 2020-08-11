@@ -52,6 +52,7 @@ $app->get('/testcall', function (Request $request, Response $response) {
 
 require 'routes/login.php';
 require 'routes/mail.php';
+require 'routes/pages.php';
 
 
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apilink: 'http://localhost/creator/src/api/'
+  apilink: 'http://localhost/vulpes/src/api/'
 };
 
 /*

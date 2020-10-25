@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "typedoc": "typedoc",
+    "noreload": "ng serve --live-reload false",
+    "build.prod": "ng build --prod --build-optimizer --aot --output-hashing=all --output-path dist"
   },
   "private": true,
   "dependencies": {
@@ -23,22 +26,34 @@
     "@angular/service-worker": "~10.0.2",
     "@ckeditor/ckeditor5-angular": "^1.2.3",
     "@ckeditor/ckeditor5-build-classic": "^20.0.0",
+    "@swimlane/ngx-datatable": "^17.0.0",
+    "@types/tinymce": "^4.5.16",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "angular-calendar": "^0.28.16",
     "bootstrap": "^4.5.0",
     "date-fns": "^2.14.0",
+    "ng2-date-picker": "^9.0.0",
+    "ng2-dragula": "^2.1.1",
+    "ngx-bootstrap": "^5.6.1",
     "ngx-cookie-service": "^3.0.4",
+    "ngx-color-picker": "^9.1.0",
     "ngx-loading": "^8.0.0",
+    "ngx-pagination": "^5.0.0",
+    "ngx-toastr": "^12.1.0",
+    "ngx-uploader": "^8.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "tinymce": "^4.9.2",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.1",
     "@angular/cli": "~10.0.1",
+    "@angular/language-service": "^10.0.2",
     "@angular/compiler-cli": "~10.0.2",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
+    "@types/bootstrap": "^4.5.0",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^6.0.0-next.1",
     "jasmine-core": "~3.5.0",
@@ -51,6 +66,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "typedoc": "0.17.8",
     "typescript": "~3.9.5"
   }
 }

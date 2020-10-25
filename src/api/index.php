@@ -43,18 +43,33 @@ $container['upload_directory'] = __DIR__ . "/../uploads";
 
 // API CALL: test call
 // TODO: Make DOC
-$app->get('/testcall', function (Request $request, Response $response) {
+$app->get('/testgetcall', function (Request $request, Response $response) {
     $data = array('Jsonresponse' => 'item1', 'type' => '40X');
+    $response = json_encode($data);
+    return $response;
+});
+
+// test post call
+$app->post('/testpostcall', function (Request $request, Response $response) {
+    
+    $parsedBody = $request->getParsedBody();
+    $testpostfield = $parsedBody['testpostfield'];
+
+
+    $data = array('Jsonresponse' => $testpostfield);
+   
+
     $response = json_encode($data);
     return $response;
 });
 
 
 require 'routes/login.php';
-require 'routes/mail.php';
 require 'routes/pages.php';
-
-
+require 'routes/content.php';
+require 'routes/files.php';
+require 'routes/users.php';
+require 'routes/mail.php';
 
 
 // run the app

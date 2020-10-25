@@ -27,9 +27,22 @@
             "styles": [
               "node_modules/angular-calendar/css/angular-calendar.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@swimlane/ngx-datatable/index.css",
+              "node_modules/@swimlane/ngx-datatable/themes/material.css",
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tinymce/tinymce.js",
+              "node_modules/tinymce/themes/modern/theme.js",
+              "node_modules/tinymce/plugins/link/plugin.js",
+              "node_modules/tinymce/plugins/paste/plugin.js",
+              "node_modules/tinymce/plugins/table/plugin.js",
+              "node_modules/tinymce/plugins/lists/plugin.js",
+              "node_modules/tinymce/plugins/advlist/plugin.js",
+              "node_modules/tinymce/plugins/code/plugin.js"
+            ]
           },
           "configurations": {
             "production": {
